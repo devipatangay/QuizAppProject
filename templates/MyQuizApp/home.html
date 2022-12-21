@@ -1,0 +1,67 @@
+{% extends 'MyQuizApp/main.html'%}
+{% block content %}
+{% load static %}
+        <h1  style="color: darkgreen;background-color: lightgrey;text-align: center" >Welcome to Python Quiz</h1>
+    <img class="card-img-top" src="{% static "media/python.png" %}" style="width: 10%;alignment:left;height: 120px;padding-left: 10px" alt="Card image cap">
+    <link rel="stylesheet" href="{% static 'css/Quiz.css'%}">
+<div class="container ">
+<div align="right" id="displaytimer"><b>Timer: 0 seconds</b></div>
+
+ <form method='post' action=''>
+    {% csrf_token %}
+    {% for i in questions%}
+    <div class="form-check">
+      <label for="question">{{i.question}}</label>
+    </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="" type="radio" name="{{i.question}}" id="" value="option1" >
+                {{i.option1}}
+        </div>
+        <div class="form-check">
+            <input class="" type="radio" name="{{i.question}}" id="" value="option2">
+                {{i.option2}}
+        </div>
+        <div class="form-check">
+            <input class="" type="radio" name="{{i.question}}" id="" value="option3">
+                {{i.option3}}
+        </div>
+        <div class="form-check">
+            <input class="" type="radio" name="{{i.question}}" id="" value="option4">
+                {{i.option4}}
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+    <input id='timer' type='hidden' name="timer" value="">
+    <br>
+     {%include 'MyQuizApp/pagination.html' with page=home%}
+
+ <br/>
+ <br/>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    {% block script %}
+        <script>
+
+            console.log('hello world')
+            const timer=document.getElementById('displaytimer')
+            console.log(timer.textContent)
+            const inputtag = document.getElementById('timer')
+
+            t=0
+            setInterval(()=>{
+                t+=1
+                timer.innerHTML ="<b>Timer: " +t+" seconds</b>"
+                inputtag.value = t
+            },1000)
+        </script>
+    {% endblock script %}
+
+</div>
+{% endblock %}
+
+
+
+

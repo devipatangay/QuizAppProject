@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%block content%}
+    {% load static %}
+<html lang="en">
+
+<head>
+ <link rel="stylesheet" href="{% static 'css/Quiz.css'%}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div align='center' class="hello">
+      <h1>Thankyou for attending the Quiz...!</h1><br/>
+      <p>I hope u enjoyed</p>
+      <h2>login again...</h2>
+      <a href="{% url 'login' %}"><button>Login</button></a>
+      <a href="/"><button>Back</button></a>
+  </div>
+{%endblock%}
+</body>
+</html>

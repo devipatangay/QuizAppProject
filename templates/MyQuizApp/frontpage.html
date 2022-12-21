@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static%}
+{%block content%}
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="{% static 'css/Quiz.css'%}">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body id="body1">
+  <div align='center' class="jumbotron">
+      <h1 style="color:white">Welcome to {{ user.username|title }} Python Quiz</h1><br/>
+      <h2 style="color: white;">lets get started</h2><br/>
+      <br/>
+      <a href='{% url 'login' %}'><button style="color: #0d6efd"> Login</button></a><br/><br/>
+
+        </div>
+{%endblock%}
+</body>

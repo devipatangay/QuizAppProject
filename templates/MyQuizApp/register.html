@@ -1,0 +1,11 @@
+{% load static %}
+{% block content %}
+ <link rel="stylesheet" href="{% static 'css/Quiz.css'%}">
+<div class="container jumbotron"  style="background-color: orange">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Register Account">
+    </form>
+</div>
+{% endblock %}

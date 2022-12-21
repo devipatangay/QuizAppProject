@@ -1,0 +1,17 @@
+{% extends 'MyQuizApp/main.html' %}
+{% load static %}
+{% block content %}
+        <div class="card"  style="height:100px;width: 50%" >
+            <img class="card-img-top" src="{% static "media/results.jpg" %}" style="width: 70%;alignment: center" alt="Card image cap">
+            <div class="card-body" >
+                <h5 class="card-title">Score: {{score}}</h5>
+                <p class="card-text">Percentage: {{percentage}}%</p>
+                <p class="card-text">Time Taken: {{time}} seconds</p>
+                <p class="card-text">Correct answers: {{correct}}</p>
+                <p class="card-text">Incorrect answers: {{wrong}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+                <h5>All the best for your next quiz!</h5>
+        </div>
+        </div>
+{% endblock %}
+
